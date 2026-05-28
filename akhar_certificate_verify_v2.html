@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Certificate Verification</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+
+    <style>
+        :root {
+            --primary: #1f7a45;
+            --primary-light: #ebf8f1;
+            --background: #f4f7fb;
+            --white: #ffffff;
+            --text: #111827;
+            --text-light: #6b7280;
+            --border: #e5e7eb;
+            --shadow: 0 10px 35px rgba(0, 0, 0, 0.06);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            background: var(--background);
+            color: var(--text);
+            min-height: 100vh;
+            padding: 30px 16px;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: auto;
+        }
+/* NAVBAR */
+
+.navbar {
+    background: var(--white);
+    border-radius: 24px;
+    padding: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: var(--shadow);
+    margin-bottom: 28px;
+}
+
+/* BRAND */
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+/* PLUS ICON */
+
+.brand-icon {
+    width: 62px;
+    height: 62px;
+    border-radius: 18px;
+    background: linear-gradient(135deg, #1f7a45, #2db36c);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 42px;
+    font-weight: 800;
+    box-shadow: 0 6px 18px rgba(31, 122, 69, 0.25);
+}
+
+/* BRAND TEXT */
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+}
+
+/* KRISHNA */
+
+.krishna {
+    font-size: 38px;
+    font-weight: 800;
+    color: #1f7a45;
+    letter-spacing: -1px;
+}
+
+/* HOSPITAL */
+
+.hospital {
+    font-size: 38px;
+    font-weight: 800;
+    color: #2563eb;
+    letter-spacing: -1px;
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    .brand-icon {
+        width: 52px;
+        height: 52px;
+        font-size: 34px;
+    }
+
+    .krishna,
+    .hospital {
+        font-size: 30px;
+    }
+}
+
+        /* PAGE TITLE */
+
+        .page-title {
+            text-align: center;
+            font-size: 46px;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 28px;
+            color: var(--text);
+        }
+
+        /* CARD */
+
+        .card {
+            background: var(--white);
+            border-radius: 30px;
+            padding: 38px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+        }
+
+        /* VERIFIED HEADER */
+
+        .verified-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding-bottom: 28px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 34px;
+        }
+
+        .check-badge {
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            border-radius: 18px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        .check-badge i {
+            color: white;
+            font-size: 34px;
+        }
+
+        .verified-text {
+            font-size: 34px;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        /* FIELD STYLES */
+
+        .field-row {
+            margin-bottom: 28px;
+        }
+
+        .field-label {
+            display: block;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-light);
+            margin-bottom: 10px;
+        }
+
+        .field-value {
+            width: 100%;
+            border: none;
+            outline: none;
+            resize: none;
+            background: var(--primary-light);
+            border-radius: 16px;
+            padding: 18px 20px;
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--text);
+            line-height: 1.6;
+            transition: 0.2s ease;
+            overflow: hidden;
+        }
+
+        .field-value:focus {
+            background: #def4e7;
+        }
+
+        /* FOOTER */
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: var(--text-light);
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 768px) {
+
+            body {
+                padding: 20px 12px;
+            }
+
+            .card {
+                padding: 26px;
+                border-radius: 24px;
+            }
+
+            .page-title {
+                font-size: 34px;
+            }
+
+            .verified-text {
+                font-size: 24px;
+            }
+
+            .check-badge {
+                width: 50px;
+                height: 50px;
+            }
+
+            .check-badge i {
+                font-size: 28px;
+            }
+
+            .field-label {
+                font-size: 16px;
+            }
+
+            .field-value {
+                font-size: 18px;
+                padding: 16px;
+            }
+
+            .navbar img {
+                width: 120px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+<!-- NAVBAR -->
+
+<div class="navbar">
+
+    <div class="brand">
+
+        <div class="brand-icon">
+            +
+        </div>
+
+        <div class="brand-text">
+            <span class="krishna">Krishna</span>
+            <span class="hospital">Hospital</span>
+        </div>
+
+    </div>
+
+</div>
+        <!-- TITLE -->
+
+        <h1 class="page-title">
+            Certificate Verification
+        </h1>
+
+        <!-- CARD -->
+
+        <div class="card">
+
+            <!-- VERIFIED HEADER -->
+
+            <div class="verified-header">
+
+                <div class="check-badge">
+                    <i class="ti ti-check"></i>
+                </div>
+
+                <div class="verified-text">
+                    Verified Successfully
+                </div>
+
+            </div>
+
+            <!-- FIELDS -->
+
+            <div class="field-row">
+                <label class="field-label">
+                    Intern Name
+                </label>
+
+                <textarea class="field-value" rows="1">Lokesh Yadav S/O Ramjas Yadav</textarea>
+            </div>
+
+            <div class="field-row">
+                <label class="field-label">
+                    Roll Number
+                </label>
+
+                <textarea class="field-value" rows="1">166146</textarea>
+            </div>
+
+            <div class="field-row">
+                <label class="field-label">
+                    Internship Role
+                </label>
+
+                <textarea class="field-value" rows="1">Social Welfare</textarea>
+            </div>
+
+            <div class="field-row">
+                <label class="field-label">
+                    Internship Duration
+                </label>
+
+                <textarea class="field-value" rows="1">01/04/2026 to 25/04/2026</textarea>
+            </div>
+
+            <div class="field-row">
+                <label class="field-label">
+                    Authorized Signatory
+                </label>
+
+                <textarea class="field-value" rows="1">Atul Kumar</textarea>
+            </div>
+
+            <div class="field-row">
+                <label class="field-label">
+                    Issue Date
+                </label>
+
+                <textarea class="field-value" rows="1">05/05/2026</textarea>
+            </div>
+
+            <div class="field-row">
+                <label class="field-label">
+                    Hospital Name
+                </label>
+
+                <textarea class="field-value" rows="1">Krishna Hospital</textarea>
+            </div>
+
+        </div>
+
+        <!-- FOOTER -->
+
+        <div class="footer">
+            © 2026 Krishna Hospital • Official Certificate Verification Portal
+        </div>
+
+    </div>
+
+</body>
+
+</html>
